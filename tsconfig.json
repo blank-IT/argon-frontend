@@ -20,38 +20,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-      // 디렉토리 설정 시 필요
-      // "@/component/*": [
-      //   "components/*"
-      // ],
-      // "@/types/*": [
-      //   "types/*"
-      // ],
-      // "@/pages/*": [
-      //   "pages/*"
-      // ],
-      // "@/styles/*": [
-      //   "styles/*"
-      // ],
-      // "@/api/*": [
-      //   "api/*"
-      // ],
-      // "@/modules/*": [
-      //   "modules/*"
-      // ],
-      // "@/hooks/*": [
-      //   "hooks/*"
-      // ],
-      // "@/utils/*": [
-      //   "utils/*"
-      // ],
-      // "@/layouts/*": [
-      //   "layouts/*"
-      // ],
-      // "@/store/*": [
-      //   "store/*"
-      // ]
+      "@apis/*": ["apis/*"],
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@states/*": ["states/*"],
+      "@styles/*": ["styles/*"],
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

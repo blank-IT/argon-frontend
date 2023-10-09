@@ -1,5 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './page.module.css';
+import styled from '@emotion/styled';
+import { theme } from '@styles/theme';
+
+const CustomStyle = styled.div`
+  ${theme.typo.headLine_1};
+`;
 
 export default function Home() {
   return (
@@ -82,9 +90,9 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>
+          <CustomStyle>
             Deploy <span>-&gt;</span>
-          </h2>
+          </CustomStyle>
           <p>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
