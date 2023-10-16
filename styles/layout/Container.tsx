@@ -16,10 +16,6 @@ const Container = styled.div<ContainerProps>`
   margin-right: auto;
   margin-left: auto;
 
-  background-color: gray;
-  margin-top: 10px;
-  height: 20px;
-
   @media (min-width: 576px) {
     max-width: 540px;
   }

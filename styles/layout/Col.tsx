@@ -24,9 +24,6 @@ const Col = styled.div<ColProps>`
   flex-basis: 0;
   max-width: 100%;
 
-  background: red;
-  height: 50px;
-
   ${(props) =>
     props.sm &&
     `

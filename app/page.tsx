@@ -1,17 +1,16 @@
 'use client';
 
-import { Col, Container } from '@styles/layout';
-import Row from '@styles/layout/Row';
+import { Text } from '@styles/components';
 
 export default function Home() {
   return (
     <main>
-      <Container>
-        <Row>
-          <Col span={4}>Content</Col>
-          <Col span={4}>Content</Col>
-        </Row>
-      </Container>
+      <Text as="span" typo="headLine_1" color="gray_100">
+        Content
+      </Text>
+      <Text as="span" typo="headLine_2" color="gray_100">
+        Content
+      </Text>
     </main>
   );
 }

@@ -9,11 +9,6 @@ export const global = css`
     font-size: 16px;
   }
 
-  // next/font로 수정 예정
-  body {
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-
   select,
   input,
   button,

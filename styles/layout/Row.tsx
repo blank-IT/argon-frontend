@@ -13,8 +13,6 @@ const Row = styled.div<RowProps>`
   margin-right: -15px;
   margin-left: -15px;
 
-  height: 200px;
-
   ${(props) =>
     props.justifyContent &&
     `

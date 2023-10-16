@@ -14,7 +14,7 @@ export type KeyOfTypo = keyof typeof typo;
 
 export type TextType = {
   typo: KeyOfTypo;
-  color: KeyOfPalette;
+  color?: KeyOfPalette;
 };
 
 export const theme: Theme = {
