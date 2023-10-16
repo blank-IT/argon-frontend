@@ -21,4 +21,8 @@ export const global = css`
     border: 0;
     outline: 0 !important;
   }
+
+  div {
+    box-sizing: border-box;
+  }
 `;
