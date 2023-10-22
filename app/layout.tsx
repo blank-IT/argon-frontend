@@ -1,4 +1,5 @@
 'use client';
+// 임시 cilent side
 
 import { ReactNode } from 'react';
 import { Global, ThemeProvider } from '@emotion/react';
