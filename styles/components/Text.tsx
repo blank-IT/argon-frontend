@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+
 import { HTMLAttributes } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -18,13 +19,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
  * @param typo Typo theme 선택
  * @param color Palette theme 선택
  */
-export const Text = ({
-  typo,
-  as = 'p',
-  color,
-  children,
-  ...props
-}: TextProps) => {
+const Text = ({ typo, as = 'p', color, children, ...props }: TextProps) => {
   return (
     <StyledText typoKey={typo} colorKey={color} as={as} {...props}>
       {children}
@@ -41,3 +36,5 @@ const StyledText = styled.span<{ typoKey: KeyOfTypo; colorKey?: KeyOfPalette }>`
       color: ${theme.palette[colorKey]};
     `}
 `;
+
+export { Text };

@@ -6,7 +6,7 @@ export const global = css`
   ${emotionReset}
 
   html {
-    font-size: 16px;
+    font-size: 10px;
   }
 
   select,

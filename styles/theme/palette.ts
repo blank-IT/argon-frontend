@@ -30,4 +30,6 @@ export const palette = {
   red_30: 'rgba(220, 76, 76, 0.2)',
   red_20: 'rgba(220, 76, 76, 0.1)',
   red_10: 'rgba(220, 76, 76, 0.05)',
+
+  yellow_100: '#FFEC62',
 };

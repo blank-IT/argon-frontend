@@ -11,10 +11,7 @@ const Main = () => {
     <ConfigProvider theme={themeAntdConfig}>
       <main>
         <Text as="span" typo="headLine_1" color="gray_100">
-          Content
-        </Text>
-        <Text as="span" typo="headLine_2" color="gray_100">
-          Content
+          Main
         </Text>
       </main>
     </ConfigProvider>
