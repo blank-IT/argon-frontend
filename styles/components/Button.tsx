@@ -35,6 +35,10 @@ const StyledButton = styled.button<{
   width: 100%;
   padding: 14px 0;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   ${({ backgroundColorKey, theme }) =>
     backgroundColorKey &&
     css`
@@ -46,6 +50,10 @@ const StyledButton = styled.button<{
     css`
       color: ${theme.palette[colorKey]};
     `}
+
+    > svg, img {
+    margin-right: 10px;
+  }
 `;
 
 export { Button };

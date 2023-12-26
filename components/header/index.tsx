@@ -1,12 +1,11 @@
 import { useCallback, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-
-import { LeftOutlined } from '@ant-design/icons';
+import styled from '@emotion/styled';
 
 import { ImageViewer } from '@components/imageViewer';
 
-import styled from '@emotion/styled';
 import { Container } from '@styles/layout';
+import { Icon } from '@styles/components/Icon';
 
 interface HeaderProps {
   title?: string;
@@ -30,7 +29,7 @@ const Header = ({ title, children }: HeaderProps) => {
 const Logo = () => {
   return (
     <StyledLogo>
-      <ImageViewer src="/images/logo.png" alt="logo" width={100} height={100} />
+      <ImageViewer src="/images/logo.png" alt="logo" width={104} height={22} />
     </StyledLogo>
   );
 };
@@ -44,7 +43,7 @@ const BackButton = () => {
 
   return (
     <div onClick={onClick}>
-      <LeftOutlined />
+      <Icon icon="arrowsLeft" size={32} />
     </div>
   );
 };
