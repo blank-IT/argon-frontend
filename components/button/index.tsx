@@ -8,11 +8,16 @@ interface ButtonProps {
   backgroundColor?: KeyOfPalette;
   color?: KeyOfPalette;
   children: ReactNode;
+  onClick?: () => void;
 }
 
-const Button = ({ backgroundColor, color, children }: ButtonProps) => {
+const Button = ({ backgroundColor, color, children, onClick }: ButtonProps) => {
   return (
-    <StyledButton backgroundColor={backgroundColor} color={color}>
+    <StyledButton
+      backgroundColor={backgroundColor}
+      color={color}
+      onClick={onClick}
+    >
       {children}
     </StyledButton>
   );

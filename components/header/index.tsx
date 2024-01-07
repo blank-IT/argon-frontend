@@ -49,7 +49,7 @@ const BackButton = () => {
 };
 
 const StyledHeader = styled.div`
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
