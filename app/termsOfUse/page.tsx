@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import styled from '@emotion/styled';
 
 import { Button } from '@components/button';
@@ -19,6 +20,7 @@ const plainOptionList = [
 ];
 
 const TermsOfUsePage = () => {
+  const router = useRouter();
   const [checkedList, setCheckedList] = useState<CheckboxValueType[]>([]);
 
   const isCheckedAll = useMemo(
@@ -44,6 +46,10 @@ const TermsOfUsePage = () => {
   const handleClickCheckListAll = useCallback(() => {
     setCheckedList(plainList);
   }, [plainList]);
+
+  const handleClickNext = useCallback(() => {
+    router.push('/profile');
+  }, []);
 
   return (
     <StyledTermsOfUsePage>
@@ -73,7 +79,7 @@ const TermsOfUsePage = () => {
 
       <StyledButtonWrap>
         {isCheckedAll ? (
-          <Button backgroundColor="gray_90">
+          <Button backgroundColor="gray_90" onClick={handleClickNext}>
             <Text as="span" typo="headLine_1" color="gray_0">
               다음
             </Text>

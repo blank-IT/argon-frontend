@@ -29,7 +29,7 @@ const Header = ({ title, children }: HeaderProps) => {
 const Logo = () => {
   return (
     <StyledLogo>
-      <ImageViewer src="/images/logo.png" alt="logo" width={104} height={22} />
+      <ImageViewer src="/images/logo.png" alt="logo" width={85} height={24} />
     </StyledLogo>
   );
 };
@@ -48,6 +48,25 @@ const BackButton = () => {
   );
 };
 
+const Profile = () => {
+  // const router = useRouter();
+
+  const onClick = useCallback(() => {
+    alert('준비 중입니다.');
+  }, []);
+
+  return (
+    <div onClick={onClick}>
+      <ImageViewer
+        src="/images/profile_v1.png"
+        alt="profile"
+        width={32}
+        height={32}
+      />
+    </div>
+  );
+};
+
 const StyledHeader = styled.div`
   // position: fixed;
   top: 0;
@@ -59,6 +78,9 @@ const StyledHeader = styled.div`
 
   nav {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
@@ -71,14 +93,15 @@ const StyledTitle = styled.div`
 `;
 
 const StyledLogo = styled.div`
-  position: relative;
+  // position: relative;
 
-  margin: 45px 0 33px;
+  // margin: 45px 0 33px;
 
-  text-align: center;
+  // text-align: center;
 `;
 
 Header.Logo = Logo;
 Header.BackButton = BackButton;
+Header.Profile = Profile;
 
 export { Header };
