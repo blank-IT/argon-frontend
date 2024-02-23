@@ -22,7 +22,6 @@ export const typo = {
   headLine_1: css`
     ${boldFont};
     ${getFontSizeAndLineHeight(18, 24)};
-    font-weight: bold;
     letter-spacing: -0.3px;
   `,
   headLine_2: css`

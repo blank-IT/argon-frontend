@@ -3,5 +3,5 @@ export * from '@styles/theme/theme';
 export * from '@styles/theme/typo';
 export * from '@styles/theme/palette';
 
-// antd congif
+// antd config
 export * from '@styles/theme/themeAntdConfig';

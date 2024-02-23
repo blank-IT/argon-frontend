@@ -1,14 +1,23 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 
 import { Button } from '@components/button';
 import { ImageViewer } from '@components/imageViewer';
+import { Modal } from '@components/modal';
 
 import { Text } from '@styles/components';
 import { Icon } from '@styles/components/Icon';
 
 const ProfilePage = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  useEffect(() => {
+    // 비지니스 로직 작성
+    setTimeout(() => setIsOpenModal(true), 1000);
+  }, []);
+
   return (
     <StyledProfilePage>
       <ImageViewer
@@ -67,6 +76,23 @@ const ProfilePage = () => {
           </Text>
         </div>
       </StyledInfoWrap>
+
+      <Modal isOpen={isOpenModal} footer={[]} closeIcon={null}>
+        <StyledModalInfoBox>
+          <div className="wrap">
+            <div className="titleWrap">
+              <Text typo="headLine_1" color="gray_100">
+                지금까지의 여정을 입력해주세요.
+              </Text>
+            </div>
+            <div className="descriptionWrap">
+              지금까지의 커리어를 입력하고 다양한 인사이트를 확인해보세요.
+            </div>
+          </div>
+
+          <div className="buttonWrap">나의 여정 입력하기</div>
+        </StyledModalInfoBox>
+      </Modal>
     </StyledProfilePage>
   );
 };
@@ -149,6 +175,26 @@ const StyledInfoWrap = styled.div`
 
   .summaryWrap {
     margin-top: 24px;
+  }
+`;
+
+const StyledModalInfoBox = styled.div`
+  text-align: center;
+
+  .wrap {
+    padding: 24px;
+  }
+
+  .descriptionWrap {
+    margin-top: 16px;
+  }
+
+  .buttonWrap {
+    padding: 17px;
+
+    border-top: 1px solid ${({ theme }) => theme.palette['gray_6']};
+
+    color: #8673ff;
   }
 `;
 

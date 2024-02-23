@@ -20,4 +20,8 @@ export const global = css`
   div {
     box-sizing: border-box;
   }
+
+  .ant-modal-content {
+    padding: 0 !important;
+  }
 `;
