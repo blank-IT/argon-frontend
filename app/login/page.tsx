@@ -3,6 +3,7 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import styled from '@emotion/styled';
+import { useQuery, gql } from '@apollo/client';
 
 import { Button } from '@components/button';
 import { ImageViewer } from '@components/imageViewer';
@@ -10,8 +11,20 @@ import { ImageViewer } from '@components/imageViewer';
 import { Text } from '@styles/components';
 import { Icon } from '@styles/components/Icon';
 
+const GET_COUNTRIES = gql`
+  query Heath {
+    health {
+      status
+    }
+  }
+`;
+
 const LoginPage = () => {
   const router = useRouter();
+
+  const { data, loading, error } = useQuery(GET_COUNTRIES);
+
+  console.log(data, loading);
 
   const handleLoginDefault = useCallback(() => {
     alert('준비 중입니다.');
