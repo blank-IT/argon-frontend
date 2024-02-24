@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styled from '@emotion/styled';
 
 import { Button } from '@components/button';
@@ -11,7 +12,12 @@ import { Text } from '@styles/components';
 import { Icon } from '@styles/components/Icon';
 
 const ProfilePage = () => {
+  const router = useRouter();
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const handleClickGoToCareerPage = useCallback(() => {
+    router.push('/career');
+  }, []);
 
   useEffect(() => {
     // 비지니스 로직 작성
@@ -90,7 +96,9 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          <div className="buttonWrap">나의 여정 입력하기</div>
+          <div className="buttonWrap" onClick={handleClickGoToCareerPage}>
+            나의 여정 입력하기
+          </div>
         </StyledModalInfoBox>
       </Modal>
     </StyledProfilePage>

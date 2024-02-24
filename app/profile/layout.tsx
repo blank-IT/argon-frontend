@@ -6,8 +6,6 @@ import styled from '@emotion/styled';
 import { Header } from '@components/header';
 import { Footer } from '@components/footer';
 
-import { Container } from '@styles/layout';
-
 const ProfileLayout = ({ children }: { children: ReactNode }) => {
   return (
     <StyledProfileLayout>
