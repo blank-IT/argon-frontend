@@ -3,7 +3,7 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import styled from '@emotion/styled';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery, useMutation, gql } from '@apollo/client';
 
 import { Button } from '@components/button';
 import { ImageViewer } from '@components/imageViewer';
@@ -22,16 +22,30 @@ const GET_COUNTRIES = gql`
 const LoginPage = () => {
   const router = useRouter();
 
-  const { data, loading, error } = useQuery(GET_COUNTRIES);
+  // const { data, loading, error } = useQuery(GET_COUNTRIES);
 
-  console.log(data, loading);
+  const [handleGenerateGoogleAuthUrl, { data, loading, error }] = useMutation(
+    gql`
+      mutation {
+        generateGoogleAuthUrl
+      }
+    `,
+  );
 
   const handleLoginDefault = useCallback(() => {
     alert('준비 중입니다.');
   }, []);
 
-  const handleLoginGoogle = useCallback(() => {
-    router.push('/termsOfUse');
+  const handleLoginGoogle = useCallback(async () => {
+    const response = await handleGenerateGoogleAuthUrl();
+
+    const { generateGoogleAuthUrl } = response.data;
+
+    console.log('generateGoogleAuthUrl: ', generateGoogleAuthUrl);
+
+    // 구글 회원 가입 후 /termsOfUse으로 리다이렉트
+
+    // router.push('/termsOfUse');
   }, []);
 
   return (
